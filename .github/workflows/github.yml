@@ -16,8 +16,8 @@ jobs:
         python-version: '3.11'
     - name: Install dependencies
       env: 
-          custname = ${{ custname }}
-          resellername = ${{ resellername }}
+          custname = ${{ env.custname }}
+          resellername = ${{ env.resellername }}
           custpassword = ${{ secrets.custpassword }}
           resellerPassword = ${{ secrets.resllerpassword }}
       run: |

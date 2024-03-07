@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        echo env
+        printenv
     - name: Ensure browsers are installed
       run: python -m playwright install --with-deps
     - name: Run you tests

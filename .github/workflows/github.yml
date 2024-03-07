@@ -26,9 +26,7 @@ jobs:
           RESELLERNAME : ${{ env.resellername }}
           CUSTPASSWORD : ${{ secrets.custpassword }}
           RESELLERPASSWORD : ${{ secrets.resllerpassword }}
-      run: |
-        echo $CUSTNAME
-        python -m pytest --tracing=retain-on-failure --html=test-results/playwright.html
+      run: python -m pytest --tracing=retain-on-failure --html=test-results/playwright.html
     - uses: actions/upload-artifact@v4
       if: always()
       with:

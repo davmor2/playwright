@@ -27,10 +27,15 @@ jobs:
           CUSTPASSWORD : ${{ secrets.CUSTPASSWORD }}
           RESELLERPASSWORD : ${{ secrets.RESELLERPASSWORD }}
       run: |
-        mkdir test-results/
-        python -m pytest --tracing=retain-on-failure --html=test-results/playwright.html
+        mkdir test-results
+        python -m pytest --tracing=retain-on-failure --html=playwright.html
     - uses: actions/upload-artifact@v4
       if: always()
       with:
         name: playwright-traces
         path: test-results/
+      if: always()  
+      with:
+        name: html-results
+        path: playwright.html
+        

@@ -34,8 +34,6 @@ jobs:
       with:
         name: playwright-traces
         path: test-results/
-      if: always()  
-      with:
         name: html-results
         path: playwright.html
         

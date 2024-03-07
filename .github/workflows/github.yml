@@ -27,7 +27,8 @@ jobs:
           CUSTPASSWORD : ${{ secrets.CUSTPASSWORD }}
           RESELLERPASSWORD : ${{ secrets.RESELLERPASSWORD }}
       run: |
-        printenv
+        echo $RESELLERPASSWORD
+        echo ${{ secrets.RESELLERPASSWORD }}
         python -m pytest --tracing=retain-on-failure --html=test-results/playwright.html
     - uses: actions/upload-artifact@v4
       if: always()

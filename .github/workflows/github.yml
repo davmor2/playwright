@@ -27,8 +27,7 @@ jobs:
           CUSTPASSWORD : ${{ secrets.CUSTPASSWORD }}
           RESELLERPASSWORD : ${{ secrets.RESELLERPASSWORD }}
       run: |
-        echo $RESELLERNAME
-        echo $CUSTPASSWORD
+        mkdir test-results/
         python -m pytest --tracing=retain-on-failure --html=test-results/playwright.html
     - uses: actions/upload-artifact@v4
       if: always()

@@ -22,12 +22,12 @@ jobs:
       run: python -m playwright install --with-deps
     - name: Run you tests
       env: 
-          custname : ${{ env.custname }}
-          resellername : ${{ env.resellername }}
-          custpassword : ${{ secrets.custpassword }}
-          resellerPassword : ${{ secrets.resllerpassword }}
+          CUSTNAME : ${{ env.custname }}
+          RESELLERNAME : ${{ env.resellername }}
+          CUSTPASSWORD : ${{ secrets.custpassword }}
+          RESELLERPASSWORD : ${{ secrets.resllerpassword }}
       run: |
-        echo $custpassword
+        echo $CUSTNAME
         python -m pytest --tracing=retain-on-failure --html=test-results/playwright.html
     - uses: actions/upload-artifact@v4
       if: always()

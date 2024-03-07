@@ -2,4 +2,4 @@ venv
 *.cache/
 *__cache__*
 __pycache__/
-*credentials.py
+credentials.py
